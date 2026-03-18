@@ -1,0 +1,18 @@
+    - The author chooses XGboost because he believes that tuning the hyperparameters of XGboost is much faster
+    - The author also states that feature engineering is often guided by the model that we want to use. The best use of our data can only be done if we have a suitable model.
+    - Start with different models and choose from the default settings to find the baseline
+
+    # Define the classifiers to test
+
+        clfs = [
+        ('Logistic Regression', LogisticRegression(solver='liblinear', max_iter=2000)),
+        ('KNN', KNeighborsClassifier()),
+        ('Decision Tree', DecisionTreeClassifier()),
+        ('Random Forest', RandomForestClassifier(random_state=42)),
+        ('Linear SVM', LinearSVC(random_state=42, max_iter=1000, dual='auto')),
+        ('XGBoost', XGBClassifier(random_state=42)),
+        ('AdaBoost', AdaBoostClassifier(random_state=42)),
+        ('Gradient Boost', GradientBoostingClassifier(random_state=42)),
+        ('Bagging', BaggingClassifier(random_state=42)),
+        ('CatBoost', CatBoostClassifier(random_state=42, verbose=0)),
+        ]
